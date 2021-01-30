@@ -7,6 +7,7 @@ public class rockpaperscissor{
         int choice = (int) (Math.random()*choices); //typecasting
         
         String comp_choice = possibilities[choice];
+
         
         //taking input from user
         // first creating scanner object scn
@@ -15,8 +16,15 @@ public class rockpaperscissor{
         
         //taking String input
         System.out.print("Please choose between rock, paper and scissor: ");
-        String your_choice = s.next();
+        String your_choice = s.next().toLowerCase();
         //String your_choice = "paper";
+
+        while(!"rock".equals(your_choice) && !"paper".equals(your_choice) && !"scissor".equals(your_choice)){
+            System.out.print("Please choose correctly between rock, paper and scissor: ");
+            your_choice = s.next().toLowerCase();
+        }
+
+
         //storing win or loss in res (result)
         String res = "w";
         
