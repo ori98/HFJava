@@ -6,7 +6,7 @@ import java.util.*;
 public class Main {
     public static int gcd(int a, int b){
         if (b != 0){
-            return gcd(b, b%a);
+            return gcd(b, a%b);
         }
     
         else
@@ -18,7 +18,7 @@ public class Main {
         d = d % n;
         
         int i, j, k, temp;
-        int g_c_d = gcd(n, d);
+        int g_c_d = gcd(d, n);
 
         for (i = 0; i < g_c_d; i++){
             temp = arr[i];
@@ -37,7 +37,7 @@ public class Main {
                 }
 
                 arr[j] = arr[k];
-                //replacing the value to replace back
+                //taking the ending point as the starting point
                 j = k;
             }
             arr[j] = temp;
